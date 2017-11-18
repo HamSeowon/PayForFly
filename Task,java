@@ -1,0 +1,23 @@
+package c;
+
+import a.Main;
+import cn.nukkit.Player;
+import cn.nukkit.scheduler.PluginTask;
+
+public class Task extends PluginTask<Main>{
+	private Player player;
+
+	public Task(Main plugin,Player player) {
+		super(plugin);
+		this.player=player;
+		// TODO 자동 생성된 생성자 스텁
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public void onRun(int currentTick) {
+		player.setAllowFlight(false);
+		player.sendMessage("플라이 시간이 만료되었습니다.");
+	}
+
+}
